@@ -16,6 +16,8 @@ void SingleLinkedList::InsertAtTheFront(int value){
 	newnode->SetData(value);
 	newnode->SetNextNode(tempnode);
 	root = newnode;
+
+	delete tempnode;
 }
 
 void SingleLinkedList::InsertInTheMiddle(int value, int position) {
@@ -34,6 +36,7 @@ void SingleLinkedList::InsertAtTheEnd(int value) {
 
 	newnode->SetNextNode(nullptr);
 	tempnode->SetNextNode(newnode);
+	delete tempnode;
 
 };
 
@@ -52,6 +55,6 @@ void SingleLinkedList::Display() {
 		std::cout << tempnode->GetData() << std::endl;
 		tempnode = tempnode->GetNextNode();
 	}
-
+	delete tempnode;
 };
 
